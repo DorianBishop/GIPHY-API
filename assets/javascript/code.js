@@ -29,3 +29,35 @@ function displayGifs() {
         };
     });
 }
+function renderButtons() {
+    $("#buttons-view").empty();
+    for (var i = 0; i < topics.length; i++) {
+        var a = $("<button>");
+        a.addClass("gif btn btn-info");
+        a.attr("data-name", topics[i]);
+        a.text(topics[i]);
+        $("#buttons-view").append(a);
+    };
+}
+
+$("#add-gif").on("click", function(event) {
+    event.preventDefault();
+    var giphy = $("#gif-input").val().trim();
+    topics.push(giphy);
+    renderButtons();
+});
+
+$(document).on("click", ".gif", displayGifs);
+renderButtons();
+
+$(document).on("click", "img", function(){
+    var state = $(this).attr("data-state");
+    if (state ==="animate") {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+    } else {
+        $(this).attr("src", $(this).attr("data-animate")); 
+        $(this).attr("data-state", "animate");
+    }
+
+});
