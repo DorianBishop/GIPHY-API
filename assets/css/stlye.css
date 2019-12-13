@@ -6,3 +6,13 @@ button {
 #gif-form {
 	margin: 20px;
 }
+
+#add-gif {
+	margin-left: 15px;
+}
+
+#display-gifs {
+	width: 100%;
+	display: inline;
+
+}
