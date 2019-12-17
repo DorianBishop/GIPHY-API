@@ -2,7 +2,7 @@ var topics = ["Steak", "Ribs", "Shrimp", "Taco", "Salmon"];
 
 function displayGifs() {
     var x = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + x
      + "&api_key=ZWQFqH0ryYHLkSv9nQ3Z6MoiGFMxsUiL";
     $.ajax({
       url: queryURL,
